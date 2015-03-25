@@ -65,11 +65,11 @@ class ViewController: UIViewController {
         wasSlided = !wasSlided
         if (wasSlided)
         {
-            lText.text = "Male"
+            sexLabel.text = "Male"
         }
         else
         {
-            lText.text = "Female"
+            sexLabel.text = "Female"
         }
     }
     @IBOutlet weak var slideLabel: UILabel!
@@ -91,15 +91,15 @@ class ViewController: UIViewController {
         {
             bmi = bmr * 1.2
         }
-        else if (slideVal == 0)
+        else if (slideVal == 1)
         {
             bmi = bmr * 1.375
         }
-        else if (slideVal == 0)
+        else if (slideVal == 2)
         {
             bmi = bmr * 1.55
         }
-        else if (slideVal == 0)
+        else if (slideVal == 3)
         {
             bmi = bmr * 1.725
         }
