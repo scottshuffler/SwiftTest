@@ -31,6 +31,9 @@ class ViewController: UIViewController {
     var age : Int!
     var slideVal : Int = 0
     var bmi : Double!
+    var proteinTot : Double!
+    var carbTotal : Double!
+    var fatTotal : Double!
 
     @IBOutlet weak var bmrLab: UILabel!
     @IBOutlet weak var sexLabel: UILabel!
@@ -73,6 +76,9 @@ class ViewController: UIViewController {
         }
     }
     @IBOutlet weak var slideLabel: UILabel!
+    @IBOutlet weak var fatLabel: UILabel!
+    @IBOutlet weak var carbLabel: UILabel!
+    @IBOutlet weak var proLabel: UILabel!
     @IBAction func buttonPressed(sender: AnyObject) {
         println("You clicked the button")
         height = hText.text.toInt()
@@ -118,6 +124,20 @@ class ViewController: UIViewController {
         newweight = tempCalc - tempWeight
         
         lText.text = String(format:"%.1f", newweight)
+        
+        newweight = (newweight * 0.8)
+        proLabel.text = String(format:"%.1f", newweight)
+        newweight =  newweight * 4
+        bmi = bmi - newweight
+        
+        
+        height = cText.text.toInt()
+        carbTotal = Double(height)
+        carbTotal = carbTotal * 4.0
+        bmi = bmi - carbTotal
+        carbLabel.text = cText.text
+        fatLabel.text = String(format:"%.1f", (bmi/9))
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
